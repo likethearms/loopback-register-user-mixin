@@ -1,0 +1,24 @@
+{
+  "name": "loopback-register-user-mixin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "register-user.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json"
+  },
+  "keywords": [],
+  "author": "Henrik Salmela",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/likethearms/loopback-invite-user-mixin"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1"
+  }
+}
