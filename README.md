@@ -56,15 +56,16 @@ CONFIG EMAIL
 ```js
   Member.beforeRemote('register', (ctx, _, next) => {
     ctx.emailConfig = {
-      redirect: `${URL}/invite`,
+      redirect: `${URL}/confirm`,
       from: 'example@example.com',
-      subject: 'Invite | Example app',
-      templatePath: path.resolve(__dirname, './email.ejs'),
+      subject: 'Thanks for Registering | Example app',
+      templatePath: path.resolve(__dirname, './emails/verify-email.ejs'),
       templateData: {
         signature: 'Elon',
-        buttonText: 'Accept invitation',
+        buttonText: 'Activate account',
         lines: [
-          'Please visit the page and accept invitation.'
+          'Thank you',
+          'Thanks for registering. Please follow the link below to complete your registration.',
         ],
       },
     };
