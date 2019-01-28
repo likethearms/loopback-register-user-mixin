@@ -81,7 +81,7 @@ module.exports = (Model) => {
 
     const updateUser = (c) => {
       company = c;
-      return user.updateAttribute('companyId', c.id);
+      return user.updateAttributes({ companyId: c.id, isCompanyOwner: true });
     };
 
     const login = (member) => {
