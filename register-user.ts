@@ -108,7 +108,7 @@ module.exports = (Model) => {
       };
       return new Promise((resolve, reject) => {
         user.verify(options, (err) => {
-          if (err) return reject();
+          if (err) return reject(err);
           return resolve();
         });
       });
