@@ -34,6 +34,12 @@ Add the `mixins` property to your `server/model-config.json`:
 }
 ```
 
+```json
+  "RequestBody": {
+    "public": false
+  }
+```
+
 MODEL CONFIG
 =============
 
