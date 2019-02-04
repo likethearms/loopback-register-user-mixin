@@ -74,14 +74,11 @@ module.exports = (Model) => {
       }
     }
 
-    const createCompany = (Model) => {
-      user = Model;
-      return Company.create(companyBody);
-    };
-
-    const updateUser = (c) => {
+    const createUser = (c) => {
       company = c;
-      return user.updateAttributes({ companyId: c.id, isCompanyOwner: true });
+      userBody.companyId = c.id;
+      userBody.isCompanyOwner = true;
+      return Model.create(userBody);
     };
 
     const login = (member) => {
@@ -114,9 +111,8 @@ module.exports = (Model) => {
       });
     };
 
-    Model.create(userBody)
-      .then(createCompany)
-      .then(updateUser)
+    Company.create(companyBody)
+      .then(createUser)
       .then(login)
       .then(sendVerificationEmail)
       .then(() => callback(null, user, accessToken))
