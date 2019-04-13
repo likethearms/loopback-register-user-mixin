@@ -35,6 +35,11 @@ const defaultEmailOptions: IEmailConfig = {
 }
 
 module.exports = (Model) => {
+  Model.defineProperty('isCompanyOwner', {
+    type: "boolean",
+    default: false,
+  });
+
   Model.remoteMethod('register', {
     accepts: [
       { arg: "data", type: 'RequestBody', http: { source: "body" } },
