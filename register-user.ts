@@ -31,7 +31,7 @@ const defaultEmailOptions: IEmailConfig = {
   redirect: 'http://localhost:3000/confirm',
   from: 'info@test.com',
   subject: 'Thanks for Registering',
-  templatePath: path.resolve(__dirname, './emails/verify-email.ejs'),
+  templatePath: require.resolve('simple-transaction-email-ejs/simple-email.ejs'),
 }
 
 module.exports = (Model) => {
@@ -98,7 +98,7 @@ module.exports = (Model) => {
       accessToken = a;
       const verifyHref = `${emailConfig.redirect}?uid=${user.id}`
       const options = {
-        verifyHref,
+        url: verifyHref,
         type: 'email',
         to: user.email,
         from: emailConfig.from,
