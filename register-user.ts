@@ -98,7 +98,7 @@ module.exports = (Model) => {
       accessToken = a;
       const verifyHref = `${emailConfig.redirect}?uid=${user.id}`
       const options = {
-        url: verifyHref,
+        verifyHref,
         type: 'email',
         to: user.email,
         from: emailConfig.from,
